@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"
+        motion:autoTransition="animateToEnd">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/phoenixLabs"
+               motion:framePosition="87"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/phoenixLabs"
+               motion:framePosition="100"
+               android:alpha="1" />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/backgroundLayout"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="10"
+            android:scaleY="10" />
+        <Constraint
+            android:id="@+id/blueText"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="406dp"
+            android:layout_height="69dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="0"
+            android:scaleY="0" />
+        <Constraint
+            android:id="@+id/whiteText"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="406dp"
+            android:layout_height="69dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="1"
+            android:scaleY="1"
+            motion:transitionEasing="cubic(0.9,0,0.67,1)" />
+        <Constraint
+            android:id="@+id/phoenixLabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/blueText"
+            android:alpha="0" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/backgroundLayout"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="0"
+            android:scaleY="0" />
+        <Constraint
+            android:id="@+id/blueText"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="406dp"
+            android:layout_height="69dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="1"
+            android:scaleY="1"
+            motion:transitionEasing="cubic(0,0.01,1,0)" />
+        <Constraint
+            android:id="@+id/whiteText"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="406dp"
+            android:layout_height="69dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="0"
+            android:scaleY="0" />
+        <Constraint
+            android:id="@+id/phoenixLabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/blueText"
+            motion:transitionEasing="cubic(1,0,1,0)"
+            android:alpha="1" />
+    </ConstraintSet>
+</MotionScene>
